@@ -6,13 +6,13 @@ from django.views.generic import DetailView, ListView
 
 class NotesListView(ListView):
     model = Notes
-    context_object_name = "notes" # default is objects
+    context_object_name = "notes" # default is modelname_list
     template_name = 'notes/notes_list.html'
 
 
 class NotesDetailView(DetailView):
     model = Notes
-    context_object_name = 'note'
+    context_object_name = 'note' # default is modelname lowercased.
 
 
 # def detail(request, id):
