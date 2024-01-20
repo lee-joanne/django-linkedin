@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .models import Notes
 from django.shortcuts import get_object_or_404
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, CreateView, ListView
+from .forms import NotesForm
 # Create your views here.
 
 class NotesListView(ListView):
@@ -15,6 +16,7 @@ class NotesDetailView(DetailView):
     context_object_name = 'note' # default is modelname lowercased.
 
 
-# def detail(request, id):
-#     note = get_object_or_404(Notes, id=id)
-#     return render(request, 'notes/notes_detail.html', {'note': note})
+class NotesCreateView(CreateView):
+    model = Notes
+    form_class = NotesForm
+    success_url = '/smart/notes'
