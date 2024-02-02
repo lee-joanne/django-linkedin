@@ -4,6 +4,9 @@
   {% for note in notes %}
   <div class="col">
     <div class="p-3 border">
+      <div>
+        <a href="{% url 'notes_update' note.pk %}">Edit</a>
+      </div>
       <a
         href="{% url 'notes_detail' note.pk %}"
         class="text-dark text-decoration-non"

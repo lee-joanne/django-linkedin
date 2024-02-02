@@ -3,4 +3,8 @@
   <h1 class="my-5">{{ note.title }}</h1>
   <p>{{ note.text }}</p>
 </div>
+
+<a href="{% url 'notes_list' %}" class="btn btn-secondary">Go Back</a>
+<a href="{% url 'notes_update' note.id %}" class="btn btn-secondary">Edit</a>
+<a href="{% url 'notes_delete' note.id %}" class="btn btn-danger">Delete</a>
 {% endblock %}

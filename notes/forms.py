@@ -15,8 +15,8 @@ class NotesForm(forms.ModelForm):
             'text': 'Write your thoughts here'
         }
 
-    def clean_title(self):
-        title = self.cleaned_data['title']
-        if 'Django' not in title:
+    def clean_text(self):
+        text = self.cleaned_data['text']
+        if 'Django' not in text:
             raise ValidationError("We only accept notes about Django")
-        return title # required to process valid, cleaned data
+        return text # required to process valid, cleaned data
